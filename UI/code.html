@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transaction Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#7771ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-container": "#858383",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c3c0ff",
+                        "surface-dim": "#dadada",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary": "#000000",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#372abf",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#656464",
+                        "secondary-container": "#e4e2e1",
+                        "on-background": "#1a1c1c",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-fixed": "#100069",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#5f5e5e",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#1c1b1b",
+                        "on-surface": "#1a1c1c",
+                        "inverse-primary": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e3dfff",
+                        "outline": "#747878",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "tertiary-container": "#100069"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "xl": "40px",
+                        "margin-desktop": "48px",
+                        "xxl": "64px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9F9F9; color: #1a1c1c; }
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+        @media (max-width: 768px) { .bento-grid { grid-template-columns: repeat(4, 1fr); } }
+        .z-shadow-rest { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+        .z-shadow-hover:hover { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.08); transform: translateY(-1px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-24 md:pb-8 flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-background border-b border-outline-variant flat no shadows">
+<button class="flex items-center justify-center p-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary font-bold">arrow_back</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary">Order #4829 Tracking</h1>
+<button class="flex items-center justify-center p-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-secondary">help_outline</span>
+</button>
+</header>
+<main class="flex-grow pt-[72px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<div class="bento-grid">
+<!-- Status Timeline Card (Spans 8 cols on desktop, full width mobile) -->
+<div class="col-span-4 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-md z-shadow-rest flex flex-col gap-lg">
+<div class="flex justify-between items-center mb-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-background">Status</h2>
+<span class="text-label-caps font-label-caps text-secondary bg-surface-container-low px-sm py-xs rounded">UPDATED JUST NOW</span>
+</div>
+<div class="relative pl-6 space-y-xl">
+<!-- Vertical Line -->
+<div class="absolute left-3.5 top-2 bottom-6 w-px bg-outline-variant"></div>
+<div class="absolute left-3.5 top-2 h-1/2 w-px bg-on-tertiary-container shadow-[0_0_8px_rgba(119,113,255,0.6)]"></div>
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-6 w-5 h-5 rounded-full bg-on-tertiary-container border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-through opacity-70">Confirmed</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-6 w-5 h-5 rounded-full bg-on-tertiary-container border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-through opacity-70">Provider Accepted</p>
+</div>
+<!-- Step 3 (Active) -->
+<div class="relative">
+<div class="absolute -left-6 w-5 h-5 rounded-full bg-surface-container-lowest border-2 border-on-tertiary-container flex items-center justify-center z-10 animate-pulse shadow-[0_0_10px_rgba(119,113,255,0.4)]">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<p class="text-headline-sm font-headline-sm text-primary">In Progress</p>
+<p class="text-body-md font-body-md text-secondary mt-xs">Elena R. is currently working on your repair.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<div class="absolute -left-6 w-5 h-5 rounded-full bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center"></div>
+<p class="text-body-md font-body-md text-secondary">Ready</p>
+</div>
+</div>
+</div>
+<!-- Context / Map Card (Spans 4 cols on desktop, full width mobile) -->
+<div class="col-span-4 md:col-span-4 flex flex-col gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden z-shadow-rest h-[240px] relative">
+<!-- Map Fragment -->
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A clean, minimalist high-contrast digital map interface showing a precise street grid with subtle blue highlighting for a route. The map style is corporate modern, using off-whites and pale greys for the background with sharp 1px dark grey lines for streets. A glowing blue dot indicates a location. The mood is precise, utilitarian, and technologically advanced." data-location="West Village, NYC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp0ZtQKdDFp4EbV4ql9uAlotteiqWxKEeGkPj8HUJ5bryTQ0eq06i3-VOrqhx4rE3o8UGHZPF-IWOlh2txx5mFhr4gyFy2LFFv2oPO0n6saCtO0iCfKBj_UUTTFkPiDCmYklB-uzdRakQAb1Yq3LhZBJcetIGHWDI_JOrr--jr3TJafarm4mJAF25suQLCDkPq6AAU159jkAbXR7L-uM05FpVg_OPwket2VC3-8ZeSlIpNK-cenOxNog"/>
+<!-- Overlay Info -->
+<div class="absolute bottom-md left-md right-md bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant rounded p-sm flex items-center gap-md z-shadow-rest">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A small, professional headshot of a female technician (Elena R.) wearing a clean, dark grey uniform polo shirt. The lighting is bright and studio-quality, emphasizing trust and competence. The background is a stark, clean white to fit within a modern UI interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCShBvh2C-BQwHAFa-Exec0hdz3GwAuPIP0IiyA4MJvLeC0FHrU88peizb7GjuJj1aJtn5xtR6mr0ONGvtCg40Kop8eH0L4Qja09ylf6EuX6iEHMmdQCDz3UsX6e22bmpVMJ8WeyinlfPXNb8brJTl0dMCxEARK48YbpGgaegt94VgNyUfegLHJ7wunTHtx7LEtzLGnvJAo7iVkg1Quna7l93DqGrZG67KfaaJs-eJioQCEyIXXzR6U6Q"/>
+</div>
+<div>
+<p class="text-body-md font-body-md text-primary font-medium">Elena R.</p>
+<p class="text-label-caps font-label-caps text-secondary">Repair Technician</p>
+</div>
+</div>
+</div>
+<!-- Simon AI Message Card -->
+<div class="bg-surface-container-lowest border border-on-tertiary-container/30 rounded-xl p-md z-shadow-rest relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-on-tertiary-container"></div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-tertiary-container mt-xs">auto_awesome</span>
+<div>
+<p class="text-label-caps font-label-caps text-on-tertiary-container mb-xs">SIMON AI INSIGHT</p>
+<p class="text-body-md font-body-md text-on-background">Elena R. has started your repair. Estimated completion: <span class="font-medium text-primary">14:45</span>.</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm mt-auto">
+<button class="w-full bg-primary text-on-primary py-sm px-md rounded-lg text-body-md font-body-md font-medium hover:opacity-90 transition-opacity z-shadow-hover">
+                        Message Provider
+                    </button>
+<button class="w-full bg-surface-container-lowest text-primary border border-outline-variant py-sm px-md rounded-lg text-body-md font-body-md font-medium hover:bg-surface-container-low transition-colors z-shadow-hover">
+                        Modify Order
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Suppressed BottomNavBar due to Transactional/Focused intent -->
+</body></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reputation &amp; Trust Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#7771ff",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-primary-container": "#858383",
+                      "background": "#f9f9f9",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "surface-container-low": "#f3f3f3",
+                      "secondary-fixed": "#e4e2e1",
+                      "tertiary-fixed-dim": "#c3c0ff",
+                      "surface-dim": "#dadada",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "primary": "#000000",
+                      "surface-bright": "#f9f9f9",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#372abf",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-container": "#656464",
+                      "secondary-container": "#e4e2e1",
+                      "on-background": "#1a1c1c",
+                      "on-surface-variant": "#444748",
+                      "on-tertiary-fixed": "#100069",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#e5e2e1",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "on-secondary-fixed-variant": "#474747",
+                      "outline-variant": "#c4c7c7",
+                      "tertiary": "#000000",
+                      "inverse-surface": "#2f3131",
+                      "surface-tint": "#5f5e5e",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#1c1b1b",
+                      "primary-container": "#1c1b1b",
+                      "on-surface": "#1a1c1c",
+                      "inverse-primary": "#c8c6c5",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#e3dfff",
+                      "outline": "#747878",
+                      "surface-container": "#eeeeee",
+                      "secondary-fixed-dim": "#c8c6c6",
+                      "tertiary-container": "#100069"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "md": "16px",
+                      "margin-mobile": "16px",
+                      "xl": "40px",
+                      "margin-desktop": "48px",
+                      "xxl": "64px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: theme('spacing.lg');
+        }
+        .bento-item {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: theme('borderRadius.xl');
+            padding: theme('spacing.lg');
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: theme('spacing.md');
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-background border-b border-outline-variant flat no shadows md:px-margin-desktop md:h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary">West Village Cluster</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#"><span class="text-label-caps font-label-caps">Neighborhood</span></a>
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#"><span class="text-label-caps font-label-caps">Discover</span></a>
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#"><span class="text-label-caps font-label-caps">Transactions</span></a>
+<a class="text-primary font-bold hover:opacity-80 transition-opacity" href="#"><span class="text-label-caps font-label-caps">Profile</span></a>
+</div>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[24px]">settings_suggest</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-mobile md:px-margin-desktop md:pt-24 max-w-[1440px] mx-auto pb-8">
+<!-- Header Section -->
+<div class="mb-lg md:mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile md:text-display-lg md:font-display-lg text-primary mb-xs">Reputation &amp; Trust</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Systemic trust infrastructure and verified economic standing.</p>
+</div>
+<!-- Simon AI Insight -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex items-start gap-md max-w-md animate-pulse shadow-[0_0_15px_rgba(119,113,255,0.4)]">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<p class="text-body-md font-body-md text-on-background">Simon: Your trust score increased by 0.2% after yesterday's 5 successful deliveries.</p>
+</div>
+</div>
+<div class="bento-grid">
+<!-- Identity Verification Panel -->
+<div class="bento-item col-span-12 md:col-span-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-lg">
+<h2 class="text-label-caps font-label-caps text-secondary">Entity Identity</h2>
+<span class="bg-[#F0F0F0] text-primary px-2 py-1 rounded-[4px] text-label-caps font-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Level 3 Verified
+                        </span>
+</div>
+<div class="flex items-center gap-md mb-lg">
+<div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional, clean headshot of an individual or an architectural icon representing an entity, highly structured, minimal background, high contrast lighting, exuding trust and permanence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwN9V9HpPVlDd5r5si5jbjsW0ax6kLYfhTgIy6ceQWxZctoM6K6D3gzk9_ILSBj-kpbhS_N5g1K7VF_o9_gqBEihdpsDjsLeJsLWSEovJQtPw9EGhd2_i46TMeP2TYNYwqJMKWl9sZ2VtlqR65ypnlT2UWwc-sghmGgmhKqq5tmw9dr4OVOB7eYH_t0VAfbJnUJZviZip2zQS9GHI5tVfJkN5yzuJVgXZkrb_e_9XxkS3kcJuHpQCorw"/>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Alex Mercer</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Logistics Partner</p>
+</div>
+</div>
+<ul class="space-y-sm">
+<li class="flex items-center justify-between py-xs border-b border-surface-variant last:border-0">
+<span class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">badge</span> Government ID
+                            </span>
+<span class="material-symbols-outlined text-[#059669] text-[16px]">check_circle</span>
+</li>
+<li class="flex items-center justify-between py-xs border-b border-surface-variant last:border-0">
+<span class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span> Biometric
+                            </span>
+<span class="material-symbols-outlined text-[#059669] text-[16px]">check_circle</span>
+</li>
+<li class="flex items-center justify-between py-xs border-b border-surface-variant last:border-0">
+<span class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">history</span> Transactional History
+                            </span>
+<span class="material-symbols-outlined text-[#059669] text-[16px]">check_circle</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Trust Breakdown Matrix -->
+<div class="bento-item col-span-12 md:col-span-8">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="text-label-caps font-label-caps text-secondary">Trust Components</h2>
+<span class="text-headline-md font-headline-md text-primary">98.4<span class="text-body-md font-body-md text-on-surface-variant"> / 100</span></span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Component 1 -->
+<div class="p-md bg-background border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">speed</span>
+<p class="text-body-md font-body-md text-on-surface-variant mb-1">Reliability</p>
+<p class="text-headline-sm font-headline-sm text-primary">99%</p>
+</div>
+<!-- Component 2 -->
+<div class="p-md bg-background border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">star</span>
+<p class="text-body-md font-body-md text-on-surface-variant mb-1">Quality</p>
+<p class="text-headline-sm font-headline-sm text-primary">4.9<span class="text-body-md text-on-surface-variant">/5</span></p>
+</div>
+<!-- Component 3 -->
+<div class="p-md bg-background border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">forum</span>
+<p class="text-body-md font-body-md text-on-surface-variant mb-1">Response</p>
+<p class="text-headline-sm font-headline-sm text-primary">Fast</p>
+</div>
+<!-- Component 4 -->
+<div class="p-md bg-background border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">groups</span>
+<p class="text-body-md font-body-md text-on-surface-variant mb-1">Standing</p>
+<p class="text-headline-sm font-headline-sm text-primary">High</p>
+</div>
+</div>
+<div class="mt-lg pt-lg border-t border-surface-variant">
+<p class="text-label-caps font-label-caps text-secondary mb-4">Historical Trend</p>
+<div class="h-24 w-full bg-surface-container-low rounded border border-outline-variant flex items-end px-2 gap-1 opacity-70">
+<!-- Simulated Chart -->
+<div class="w-full bg-[#1A1A1A] h-[80%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[82%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[85%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[84%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[88%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[90%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[92%] rounded-t-sm"></div>
+<div class="w-full bg-[#1A1A1A] h-[95%] rounded-t-sm"></div>
+<div class="w-full bg-[#4338CA] h-[98%] rounded-t-sm relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-label-caps font-label-caps text-primary">+0.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction History Ledger -->
+<div class="bento-item col-span-12 md:col-span-7 h-96 flex flex-col">
+<div class="flex items-center justify-between mb-md pb-md border-b border-outline-variant">
+<h2 class="text-label-caps font-label-caps text-secondary">Verified Activity Ledger</h2>
+<span class="material-symbols-outlined text-secondary text-[16px]">filter_list</span>
+</div>
+<div class="flex-1 overflow-y-auto pr-2">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr>
+<th class="text-label-caps font-label-caps text-secondary font-normal pb-2 border-b border-surface-variant">Event</th>
+<th class="text-label-caps font-label-caps text-secondary font-normal pb-2 border-b border-surface-variant">Value</th>
+<th class="text-label-caps font-label-caps text-secondary font-normal pb-2 border-b border-surface-variant text-right">Trust Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="py-3 border-b border-surface-variant">
+<p class="text-body-md font-body-md text-primary">Delivery Completed</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-1">Today, 14:30 • West Village</p>
+</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-primary">$45.00</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-[#059669] text-right">+0.05%</td>
+</tr>
+<tr>
+<td class="py-3 border-b border-surface-variant">
+<p class="text-body-md font-body-md text-primary">5-Star Rating Received</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-1">Yesterday • Client: Sarah T.</p>
+</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-primary">-</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-[#059669] text-right">+0.10%</td>
+</tr>
+<tr>
+<td class="py-3 border-b border-surface-variant">
+<p class="text-body-md font-body-md text-primary">Delivery Completed</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-1">Oct 24, 09:15 • Soho</p>
+</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-primary">$120.50</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-[#059669] text-right">+0.05%</td>
+</tr>
+<tr>
+<td class="py-3 border-b border-surface-variant">
+<p class="text-body-md font-body-md text-primary">Late Cancellation</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-1">Oct 22, 18:00 • System</p>
+</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-primary">-</td>
+<td class="py-3 border-b border-surface-variant text-body-md font-body-md text-[#DC2626] text-right">-0.15%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Trust Network -->
+<div class="bento-item col-span-12 md:col-span-5 relative overflow-hidden flex flex-col min-h-[24rem]">
+<div class="relative z-10 flex items-center justify-between mb-lg">
+<h2 class="text-label-caps font-label-caps text-secondary">Trust Network</h2>
+</div>
+<div class="flex-1 relative border border-outline-variant rounded bg-background overflow-hidden flex items-center justify-center p-md">
+<!-- Abstract representation of a network -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="text-center relative z-10">
+<div class="flex justify-center -space-x-2 mb-4">
+<div class="w-8 h-8 rounded-full bg-surface-variant border-2 border-white z-30"></div>
+<div class="w-8 h-8 rounded-full bg-surface-variant border-2 border-white z-20"></div>
+<div class="w-8 h-8 rounded-full bg-surface-variant border-2 border-white z-10"></div>
+</div>
+<p class="text-headline-md font-headline-md text-primary">14</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Repeat Connections</p>
+<p class="text-body-md font-body-md text-secondary mt-2">Strong clustering in West Village</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-16 bg-surface-container-lowest border-t border-outline-variant shadow-sm">
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-label-caps font-label-caps mt-1">Neighborhood</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-label-caps font-label-caps mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="text-label-caps font-label-caps mt-1">Transactions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-tertiary-container hover:bg-surface-container-high transition-colors p-2 rounded-lg scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-caps font-label-caps mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

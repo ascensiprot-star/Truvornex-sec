@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home / Neighborhood Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#7771ff",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-primary-container": "#858383",
+                      "background": "#f9f9f9",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "surface-container-low": "#f3f3f3",
+                      "secondary-fixed": "#e4e2e1",
+                      "tertiary-fixed-dim": "#c3c0ff",
+                      "surface-dim": "#dadada",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "primary": "#000000",
+                      "surface-bright": "#f9f9f9",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#372abf",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-container": "#656464",
+                      "secondary-container": "#e4e2e1",
+                      "on-background": "#1a1c1c",
+                      "on-surface-variant": "#444748",
+                      "on-tertiary-fixed": "#100069",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#e5e2e1",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "on-secondary-fixed-variant": "#474747",
+                      "outline-variant": "#c4c7c7",
+                      "tertiary": "#000000",
+                      "inverse-surface": "#2f3131",
+                      "surface-tint": "#5f5e5e",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#1c1b1b",
+                      "primary-container": "#1c1b1b",
+                      "on-surface": "#1a1c1c",
+                      "inverse-primary": "#c8c6c5",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#e3dfff",
+                      "outline": "#747878",
+                      "surface-container": "#eeeeee",
+                      "secondary-fixed-dim": "#c8c6c6",
+                      "tertiary-container": "#100069"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "md": "16px",
+                      "margin-mobile": "16px",
+                      "xl": "40px",
+                      "margin-desktop": "48px",
+                      "xxl": "64px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            padding-top: 56px; /* Space for TopAppBar */
+            padding-bottom: 80px; /* Space for BottomNavBar */
+        }
+        /* Custom scrollbar for horizontal lists */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .map-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2.4); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased selection:bg-tertiary-fixed-dim selection:text-tertiary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-background dark:bg-background border-b border-outline-variant dark:border-outline flat no shadows hidden md:flex">
+<div class="flex items-center gap-xs text-primary dark:text-on-background universal-hover">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary dark:text-on-background">
+            West Village Cluster
+        </div>
+<div class="flex items-center gap-xs text-primary dark:text-on-background hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings_suggest">settings_suggest</span>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-background dark:bg-background flat no shadows md:hidden">
+<div class="flex items-center gap-xs text-primary dark:text-on-background universal-hover">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="text-headline-sm-mobile font-headline-sm-mobile font-bold tracking-tight text-primary dark:text-on-background">
+            West Village Cluster
+        </div>
+<div class="flex items-center gap-xs text-primary dark:text-on-background hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings_suggest">settings_suggest</span>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-md md:py-xl grid grid-cols-4 md:grid-cols-12 gap-md md:gap-gutter">
+<!-- Spatial Insight Area -->
+<section class="col-span-4 md:col-span-12 mb-lg">
+<div class="relative w-full h-[240px] md:h-[400px] rounded-xl overflow-hidden border border-outline-variant bg-surface-container-low shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<!-- Conceptual Map Data Background -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="An abstract, architectural top-down map of a dense urban neighborhood, rendered in ultra-premium minimalist light mode. Crisp 1px graphite lines define city blocks on a stark white background. Subtle shades of off-white and very pale gray denote different building zones. Clean, modern, highly structured, evoking high-end data visualization and urban planning software." data-location="West Village, New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCC-fQ2ULIu2WlBIvWkaRsGlfi75iNOiR4OJ13EJoUnyZjG15zfzlG0ctbFWg6goNn8rInuqWjPzCSQZxT75EAiJIRw2xQu3AYyxrHVuEIHzJgEzJTYk_x565M3MVBtSh6OJlVSFwgvL9pe1ZhlerScEZLj2I504QtFfV8ygHeeHyWo__WsT8fpnlfGsM_q_Y-xHWt5ZeWe2OyUoeMW7L31y-WyXe_GfdLHsfaEuGsm88LoErNfr2WaRA')"></div>
+<!-- Overlay Gradient for legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent"></div>
+<!-- Activity Clusters (Dots) -->
+<div class="absolute top-1/4 left-1/3 w-3 h-3 bg-primary rounded-full shadow-[0_0_8px_rgba(0,0,0,0.2)]">
+<div class="absolute inset-0 bg-primary rounded-full map-pulse"></div>
+</div>
+<div class="absolute top-1/2 left-2/3 w-2 h-2 bg-on-tertiary-container rounded-full shadow-[0_0_8px_rgba(119,113,255,0.4)]"></div>
+<div class="absolute bottom-1/3 left-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_8px_rgba(0,0,0,0.2)]">
+<div class="absolute inset-0 bg-primary rounded-full map-pulse" style="animation-delay: 1s;"></div>
+</div>
+<!-- Simon AI Prompt Overlay -->
+<div class="absolute bottom-md left-md right-md md:left-xl md:right-xl md:bottom-xl p-md bg-surface-container-lowest/95 backdrop-blur-md rounded-lg border border-outline-variant flex items-start gap-md animate-pulse shadow-[0_0_15px_rgba(119,113,255,0.4)]">
+<span class="material-symbols-outlined text-on-tertiary-container mt-xs" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="font-body-md text-on-background">Simon: 3 tutors nearby are available for your son's math session tomorrow.</p>
+<button class="mt-sm text-label-caps font-label-caps text-on-tertiary-container hover:opacity-80 transition-opacity uppercase">View Matches</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Feed / Infrastructure Cards -->
+<!-- Nearby Needs -->
+<section class="col-span-4 md:col-span-6 flex flex-col gap-md">
+<h2 class="text-headline-sm font-headline-sm text-on-background">Nearby Needs</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_4px_8px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container text-label-caps font-label-caps text-on-surface-variant uppercase">Logistics</span>
+<span class="text-label-caps font-label-caps text-secondary">2h</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-medium text-on-background mb-xs">Moving help needed</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Looking for two people to help move heavy furniture down one flight of stairs. Van provided.</p>
+<div class="mt-md flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="location_on">location_on</span>
+<span class="text-body-md font-body-md text-secondary">0.2 mi away</span>
+</div>
+<button class="text-label-caps font-label-caps text-primary border-b border-primary hover:opacity-80 uppercase pb-[2px]">Offer Help</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_4px_8px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container text-label-caps font-label-caps text-on-surface-variant uppercase">Commerce</span>
+<span class="text-label-caps font-label-caps text-secondary">Active</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-medium text-on-background mb-xs">3 group buy requests for organic eggs</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Local farm delivery minimum requires 2 more participants to unlock wholesale pricing.</p>
+<div class="mt-md flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-surface-dim border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-medium">A</div>
+<div class="w-6 h-6 rounded-full bg-surface-dim border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-medium">K</div>
+<div class="w-6 h-6 rounded-full bg-surface-dim border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-medium">+1</div>
+</div>
+<button class="text-label-caps font-label-caps text-primary border-b border-primary hover:opacity-80 uppercase pb-[2px]">Join Group</button>
+</div>
+</div>
+</section>
+<!-- Right Column / Active & Opportunities -->
+<section class="col-span-4 md:col-span-6 flex flex-col gap-xl">
+<!-- Active Capabilities -->
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-background mb-md">Active Capabilities</h2>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center justify-between p-md bg-surface-container-lowest border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a reliable male tradesperson in his 40s wearing a dark grey canvas jacket. The lighting is studio-quality, neutral, and bright, fitting a premium corporate modern aesthetic. Plain stark white background. High resolution, trustworthy expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLg0uVWPlQCVhLyd4R6ZNscrT0XBaRbn3M0CZWdVk3la8am_cYum3uOXK5ObKzUBIbkePshpeKFJ5OY_J1Dj3MS7nsil6OtyTkv2wRHVoeJoJ2LiKhPub3-Iqh-Hj5rKYZlV-xJAaOLr9abF6S0mpqt4a6qChWK4aKhryHXyAfbdrYXPPMRAn42mvCfzlbE47RFZDwnKYEXE4iKT0GrSkVdIKgO2ErnTbwBb7xIrfPiqqaR_t10UNGA"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-[#059669] border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-medium text-on-background">Marcus L.</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Plumbing • Licensed</p>
+</div>
+</div>
+<span class="text-label-caps font-label-caps text-secondary uppercase bg-surface-container px-2 py-1 rounded">Available Now</span>
+</div>
+<div class="flex items-center justify-between p-md bg-surface-container-lowest border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of an approachable female tutor in her 30s wearing a crisp white button-down shirt. The lighting is studio-quality, neutral, and bright, fitting a premium corporate modern aesthetic. Plain stark white background. High resolution, intelligent and friendly expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC75WUdWEsC_EbImd0k9Ec5GmzTQjB2jLF6gsxsPMcFL4Kq9cJu5C3P-4qHoefA_lnNDibosNC2cHfp5bXbpGTvbSFY7whAHBxDvIT6adA753wcdnqrnB37woM7Bv_ncjhQtra8VfDWacvB8Ssc0WGCLNnRWNpWOnhQQZQqNasuhuABAelL2R_n6b70tEwi_B5iga5_29L8OhCR7SoSkgz9sGe7Fk4jZwMp7qLV_WfdBMjVdBML-zbdpg"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-[#059669] border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-medium text-on-background">Elena R.</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Mathematics • Advanced</p>
+</div>
+</div>
+<span class="text-label-caps font-label-caps text-secondary uppercase bg-surface-container px-2 py-1 rounded">In Area</span>
+</div>
+</div>
+</div>
+<!-- Local Opportunities (Data Viz) -->
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-background mb-md">Local Opportunities</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-xs mb-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+<span class="text-label-caps font-label-caps uppercase">Underserved Category</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background mb-xs">Late-Night Coffee</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-[80%]">High volume of search queries and unmatched requests between 9 PM and 1 AM in this cluster.</p>
+<div class="mt-md h-12 flex items-end gap-1 opacity-60">
+<!-- Simple CSS Bar Chart -->
+<div class="w-1/6 bg-surface-dim rounded-t h-[20%]"></div>
+<div class="w-1/6 bg-surface-dim rounded-t h-[35%]"></div>
+<div class="w-1/6 bg-surface-dim rounded-t h-[50%]"></div>
+<div class="w-1/6 bg-primary rounded-t h-[90%]"></div>
+<div class="w-1/6 bg-primary rounded-t h-[100%]"></div>
+<div class="w-1/6 bg-surface-dim rounded-t h-[40%]"></div>
+</div>
+<div class="flex justify-between mt-1 text-label-caps font-label-caps text-secondary opacity-60">
+<span>6PM</span>
+<span>9PM</span>
+<span>12AM</span>
+<span>3AM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-16 bg-surface-container-lowest dark:bg-surface-container-low shadow-sm md:hidden">
+<!-- Active Tab: Neighborhood -->
+<a class="flex flex-col items-center justify-center text-on-tertiary-container dark:text-tertiary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full h-full scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="map" data-weight="fill" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="text-label-caps font-label-caps">Neighborhood</span>
+</a>
+<!-- Inactive Tab: Discover -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+<span class="text-label-caps font-label-caps">Discover</span>
+</a>
+<!-- Inactive Tab: Transactions -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="swap_horiz">swap_horiz</span>
+<span class="text-label-caps font-label-caps">Transactions</span>
+</a>
+<!-- Inactive Tab: Profile -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps">Profile</span>
+</a>
+</nav>
+</body></html>

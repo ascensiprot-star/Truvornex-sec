@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supply &amp; Demand - West Village Cluster</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#7771ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "on-primary-container": "#858383",
+                    "background": "#f9f9f9",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c3c0ff",
+                    "surface-dim": "#dadada",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "primary": "#000000",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#372abf",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-container": "#656464",
+                    "secondary-container": "#e4e2e1",
+                    "on-background": "#1a1c1c",
+                    "on-surface-variant": "#444748",
+                    "on-tertiary-fixed": "#100069",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#474747",
+                    "outline-variant": "#c4c7c7",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#1c1b1b",
+                    "primary-container": "#1c1b1b",
+                    "on-surface": "#1a1c1c",
+                    "inverse-primary": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e3dfff",
+                    "outline": "#747878",
+                    "surface-container": "#eeeeee",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "tertiary-container": "#100069"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "xl": "40px",
+                    "margin-desktop": "48px",
+                    "xxl": "64px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-sm": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #F9F9F9; }
+        .grid-bg {
+            background-image: linear-gradient(to right, #E5E7EB 1px, transparent 1px), linear-gradient(to bottom, #E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .z-shadow { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .z-shadow-hover:hover { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08); transform: translateY(-1px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased pb-24 md:pb-8">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-on-background fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 border-b border-outline-variant dark:border-outline">
+<button class="flex items-center justify-center p-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-on-background">location_on</span>
+</button>
+<div class="flex-1 flex justify-center">
+<h1 class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary dark:text-on-background text-center px-sm">
+                West Village Cluster
+            </h1>
+</div>
+<button class="flex items-center justify-center p-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-on-background">settings_suggest</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto grid-bg min-h-screen">
+<!-- Page Header -->
+<div class="mb-gutter">
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary">Supply &amp; Demand</h2>
+<p class="text-secondary mt-xs font-body-md text-body-md">Real-time economic infrastructure health</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-4 md:grid-cols-12 gap-sm md:gap-gutter">
+<!-- Main Visualization (Spans 4 on mobile, 8 on desktop) -->
+<div class="col-span-4 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded z-shadow flex flex-col overflow-hidden h-[400px]">
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<span class="text-label-caps font-label-caps text-secondary uppercase">Active Categories Density</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">map</span>
+</div>
+<div class="flex-1 relative bg-surface-container-low" data-alt="A highly professional, minimalist data visualization map showing economic density in a neighborhood. The map should use strict architectural lines, a monochromatic light theme (whites, light grays) with high-precision accents of deep indigo or black to represent activity nodes. The aesthetic must be ultra-premium, resembling a diagnostic tool or urban planning blueprint, entirely devoid of cartoonish elements or clutter. Soft, high-key lighting across the abstract UI elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT7VIIENdMHK4zNwCN8tY1AQuM4LkanGt6LzlnZHwivCy5xoTtcccgzUQcn3Pck5-aKycNBSJBpKbYPgLONS25bj0PDJ1YgRbFkvmd8HiqGo-S29zUCnV7wCVXfaqg3sYQkfKuM0q_4B7eVp5JDhdwIsQUfsomvpTfxuyfJqwb_emcfQ4A1Hzsf9HcXJywrETlEC7Y2IgYiTi7BhFe6h8W9xzVcnSrkg4hR2wIbQ6OpCWLT-0yLeBYWA')">
+<!-- Placeholder for Map/Chart -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest border border-outline-variant px-sm py-xs bg-surface-container-lowest/80 backdrop-blur-sm rounded-sm">Diagnostic View Active</span>
+</div>
+</div>
+</div>
+<!-- Side Panel (Spans 4 on mobile, 4 on desktop) -->
+<div class="col-span-4 md:col-span-4 flex flex-col gap-sm md:gap-gutter">
+<!-- Growth Metrics Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded z-shadow p-md z-shadow-hover">
+<h3 class="text-label-caps font-label-caps text-secondary uppercase mb-md">Network Health</h3>
+<div class="space-y-md">
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="text-body-md font-body-md text-primary">Demand Growth</span>
+<span class="text-body-md font-body-md text-[#059669] font-medium">+12%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 flex rounded-full overflow-hidden">
+<div class="bg-[#059669] h-full" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="text-body-md font-body-md text-primary">Provider Capacity</span>
+<span class="text-body-md font-body-md text-primary font-medium">84%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 flex rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 84%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Opportunity / Simon AI Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded z-shadow p-md animate-pulse shadow-[0_0_15px_rgba(119,113,255,0.1)] flex-1 relative overflow-hidden group border-t-2 border-t-on-tertiary-container">
+<div class="absolute top-0 right-0 p-sm opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-tertiary-container text-[48px]">smart_toy</span>
+</div>
+<div class="flex items-center gap-xs mb-md relative z-10">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">insights</span>
+<span class="text-label-caps font-label-caps text-on-tertiary-container uppercase">Simon AI Insight</span>
+</div>
+<p class="text-body-lg font-body-lg text-primary relative z-10 leading-snug">
+                        There is a <strong class="font-semibold text-on-tertiary-container">40% underserved demand</strong> for <span class="border-b border-outline-variant border-dashed">"Same-day Courier"</span> services in this cluster.
+                    </p>
+<button class="mt-md w-full bg-primary text-on-primary font-body-md text-body-md py-sm px-md rounded flex items-center justify-center gap-xs hover:bg-[#2D2D2D] transition-colors relative z-10">
+                        Start Business in Category
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Timeline (Spans full width) -->
+<div class="col-span-4 md:col-span-12 bg-surface-container-lowest border border-outline-variant rounded z-shadow p-md z-shadow-hover">
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-label-caps font-label-caps text-secondary uppercase">24-Hour Activity Cycle</h3>
+<span class="text-label-caps font-label-caps text-secondary bg-[#F0F0F0] px-sm py-xs rounded-sm">Peak: 14:00 - 18:00</span>
+</div>
+<!-- Abstract Bar Chart -->
+<div class="flex items-end gap-[2px] h-24 pt-md border-b border-outline-variant w-full">
+<!-- Generating bars with varying heights -->
+<script>
+                        for(let i=0; i<24; i++) {
+                            const height = Math.random() * 80 + 10;
+                            const isPeak = i >= 14 && i <= 18;
+                            const bgColor = isPeak ? 'bg-primary' : 'bg-surface-variant';
+                            document.write(`<div class="flex-1 ${bgColor} rounded-t-[1px]" style="height: ${height}%; transition: height 0.3s ease;"></div>`);
+                        }
+                    </script>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant mt-sm px-xs">
+<span>00:00</span>
+<span>06:00</span>
+<span>12:00</span>
+<span>18:00</span>
+<span>23:59</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-container-low text-primary dark:text-on-background fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-16 border-t border-outline-variant dark:border-outline shadow-sm">
+<button class="flex flex-col items-center justify-center text-on-tertiary-container dark:text-tertiary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors scale-95 transition-transform duration-150 p-sm rounded-sm">
+<span class="material-symbols-outlined mb-xs text-[24px]">map</span>
+<span class="text-label-caps font-label-caps uppercase">Neighborhood</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors p-sm rounded-sm">
+<span class="material-symbols-outlined mb-xs text-[24px]">search</span>
+<span class="text-label-caps font-label-caps uppercase">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors p-sm rounded-sm">
+<span class="material-symbols-outlined mb-xs text-[24px]">swap_horiz</span>
+<span class="text-label-caps font-label-caps uppercase">Transactions</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors p-sm rounded-sm">
+<span class="material-symbols-outlined mb-xs text-[24px]">person</span>
+<span class="text-label-caps font-label-caps uppercase">Profile</span>
+</button>
+</nav>
+</body></html>

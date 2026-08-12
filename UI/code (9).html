@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Creation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#7771ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "on-primary-container": "#858383",
+                    "background": "#f9f9f9",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c3c0ff",
+                    "surface-dim": "#dadada",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "primary": "#000000",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#372abf",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-container": "#656464",
+                    "secondary-container": "#e4e2e1",
+                    "on-background": "#1a1c1c",
+                    "on-surface-variant": "#444748",
+                    "on-tertiary-fixed": "#100069",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#474747",
+                    "outline-variant": "#c4c7c7",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#1c1b1b",
+                    "primary-container": "#1c1b1b",
+                    "on-surface": "#1a1c1c",
+                    "inverse-primary": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e3dfff",
+                    "outline": "#747878",
+                    "surface-container": "#eeeeee",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "tertiary-container": "#100069"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "xl": "40px",
+                    "margin-desktop": "48px",
+                    "xxl": "64px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": [
+                            "Geist"
+                    ],
+                    "headline-lg": [
+                            "Geist"
+                    ],
+                    "headline-md": [
+                            "Geist"
+                    ],
+                    "headline-lg-mobile": [
+                            "Geist"
+                    ],
+                    "display-lg": [
+                            "Geist"
+                    ],
+                    "body-lg": [
+                            "Geist"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "headline-sm": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pt-14 pb-16 md:pb-0 md:pt-14 selection:bg-on-tertiary-container selection:text-white">
+<!-- Content Area -->
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<header class="mb-xxl">
+<h1 class="text-display-lg font-display-lg">Start Your Business</h1>
+<p class="text-body-lg font-body-lg text-secondary mt-sm max-w-2xl">A guided, intelligent flow for starting a new economic entity.</p>
+</header>
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<!-- Main Flow Area -->
+<div class="col-span-4 md:col-span-8 flex flex-col gap-lg">
+<!-- Progress Indicator -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between shadow-sm">
+<div class="flex flex-col items-center gap-xs w-1/4">
+<div class="w-full h-1 bg-primary rounded-full mb-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary w-full transition-all duration-500"></div>
+</div>
+<span class="text-label-caps font-label-caps text-primary">Concept</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/4">
+<div class="w-full h-1 bg-surface-variant rounded-full mb-2"></div>
+<span class="text-label-caps font-label-caps text-outline">Demand Analysis</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/4">
+<div class="w-full h-1 bg-surface-variant rounded-full mb-2"></div>
+<span class="text-label-caps font-label-caps text-outline">Storefront Setup</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/4">
+<div class="w-full h-1 bg-surface-variant rounded-full mb-2"></div>
+<span class="text-label-caps font-label-caps text-outline">Verification</span>
+</div>
+</div>
+<!-- Input Area -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter shadow-sm relative overflow-hidden group hover:shadow-[0_4px_8px_rgba(0,0,0,0.05)] transition-shadow duration-300">
+<label class="text-headline-sm font-headline-sm block mb-sm" for="business-concept">Tell Truvornex what you want to build...</label>
+<textarea class="w-full bg-background border border-outline-variant rounded focus:border-on-tertiary-container focus:ring-0 text-body-lg font-body-lg p-sm resize-none transition-colors" id="business-concept" placeholder="e.g., I want to start an on-demand technical support service for small businesses in the West Village, focusing on networking and immediate hardware troubleshooting." rows="4"></textarea>
+<div class="mt-md flex justify-end">
+<button class="bg-primary text-on-primary text-label-caps font-label-caps px-xl py-sm rounded hover:opacity-90 transition-opacity">Analyze Market Opportunity</button>
+</div>
+</section>
+<!-- Simon AI Guidance -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter shadow-sm relative overflow-hidden animate-pulse shadow-[0_0_15px_rgba(119,113,255,0.05)]">
+<div class="absolute top-0 left-0 w-1 h-full bg-on-tertiary-container"></div>
+<div class="flex items-start gap-md">
+<div class="bg-tertiary-fixed-dim text-on-tertiary-container p-sm rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<h3 class="text-label-caps font-label-caps text-secondary mb-xs">Simon AI Insights</h3>
+<p class="text-body-lg font-body-lg text-on-background">I've analyzed the West Village Cluster. There is an <strong class="text-on-tertiary-container font-semibold">18% gap</strong> in "On-demand Tech Support".</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Side Context Area -->
+<div class="col-span-4 md:col-span-4 flex flex-col gap-lg">
+<!-- Market Context Chart -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm h-full flex flex-col">
+<h3 class="text-label-caps font-label-caps text-secondary mb-md border-b border-outline-variant pb-xs">Market Context: On-demand Tech Support</h3>
+<div class="flex-grow flex flex-col justify-center gap-md">
+<div class="flex items-center justify-between">
+<span class="text-body-md font-body-md">Current Supply</span>
+<span class="text-label-caps font-label-caps">32 Units</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[45%]"></div>
+</div>
+<div class="flex items-center justify-between mt-sm">
+<span class="text-body-md font-body-md">Estimated Demand</span>
+<span class="text-label-caps font-label-caps text-on-tertiary-container">50 Units</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-[70%]"></div>
+</div>
+<div class="mt-xl p-sm bg-surface rounded border border-outline-variant flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">trending_up</span>
+<p class="text-body-md font-body-md text-secondary text-sm">High likelihood of early traction based on unfulfilled local searches.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>
